@@ -1,0 +1,41 @@
+
+
+<ion-content [fullscreen]="true">
+  <div class="tela-login">
+  
+    <img class="logo-andi" src="../../../assets/icon/andi.png" alt="">
+  
+   
+
+    <h1>Cadastro</h1>
+
+    <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-input label="Nome" labelPlacement="floating" placeholder="Insira seu Nome" type="name" formControlName="name"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="Telefone" labelPlacement="floating" placeholder="Insira seu Telefone" type="text" formControlName="phone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input label="cpfCnpj" labelPlacement="floating" placeholder="Insira seu CPF ou CNPJ" type="text" formControlName="cpfCnpj"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input label="E-Mail" labelPlacement="floating" placeholder="Insira seu E-Mail" type="email" formControlName="email"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-input label="Senha" labelPlacement="floating" placeholder="Insira sua senha" type="password" formControlName="password"></ion-input>
+    </ion-item>
+<br>
+    <ion-button type="submit" [disabled]="!cadastroForm.valid">Enviar</ion-button>
+    <br>
+  </form>
+<br>
+  <ion-label routerLink="/login"> <strong> Já tenho cadastro </strong></ion-label>
+  
+</div>
+  </ion-content>
+  
