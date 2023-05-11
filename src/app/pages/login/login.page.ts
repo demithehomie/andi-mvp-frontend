@@ -35,22 +35,11 @@ constructor(
 
 ngOnInit() {
   this.credentials = this.formBuilder.group({
-    email: ['eve.holt@reqres.in', [Validators.required, Validators.email]],
-    password: ['cityslicka', [Validators.required, Validators.minLength(6)]]
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(6)]]
   });
 }
 
-onSubmit() {
-  // const { email, password } = this.loginForm.value;
-  // this.authService.login(email, password).subscribe(response => {
-  //   console.log('Login efetuado com sucesso!', response);
-  //   this.authService.setToken(response.token);
-  //   this.navCtrl.navigateForward('/dashboard');
-  // }, error => {
-  //   console.error('Erro ao efetuar login!', error);
-  //   // Exibir mensagem de erro
-  // });
-}
 
 
 async login() {

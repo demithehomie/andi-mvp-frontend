@@ -32,7 +32,7 @@ const routes: Routes = [
     canLoad: [AuthGuard]
    
   },
- 
+ //
   {
     path: 'admin-home',
     loadChildren: () => import('./pages/admin-home/admin-home.module').then( m => m.AdminHomePageModule)
