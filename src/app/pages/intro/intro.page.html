@@ -1,0 +1,28 @@
+<ion-content>
+
+	<swiper-container #swiper pager="true" options="slideOpts" [modules]="swiperModules" (slidechange)="swiperSlideChanged($event)" [loop]="true" [pagination]="true" (afterinit)="swiperReady()">
+		<!-- Slide 1 -->
+		<swiper-slide>
+			<ion-text color="light">
+				<img style="max-width: 50%;"
+					src="https://cdn.shopify.com/s/files/1/1061/1924/products/Wink_Emoji_2_large.png?v=1571606113"
+				/>
+				<h1>Hey there!</h1>
+				<p>This is an epic app because...</p>
+				<ion-button (click)="slideNext()" fill="outline" color="light">Next</ion-button>
+			</ion-text>
+		</swiper-slide>
+
+		<!-- Slide 2 -->
+		<swiper-slide>
+			<ion-text color="light">
+				<img style="max-width: 50%;"
+					src="https://2.bp.blogspot.com/-BSdVmrue0J8/WfY_HSeVHfI/AAAAAAAAGE0/pxH47zA0z-ELduafPppA9j3K2vM1J890wCLcBGAs/s1600/25b924f1d18fea2c7dfcb26a9905c1e8.png"
+				/>
+				<h1>It's Ionic!</h1>
+				<p>... it shows all the basics you need!</p>
+				<ion-button (click)="start()" fill="outline" color="light">Start</ion-button>
+			</ion-text>
+		</swiper-slide>
+	</swiper-container>
+</ion-content>

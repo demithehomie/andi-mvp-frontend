@@ -3,6 +3,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './guards/auth-guard.service';
 import { DashboardPage } from './pages/dashboard/dashboard.page';
 import { AdminHomePage } from './pages/admin-home/admin-home.page';
+import { AutoLoginGuard } from './guards/auto-login.guard';
+import { IntroGuard } from './guards/intro.guard';
 
 const routes: Routes = [
   {
@@ -16,8 +18,10 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
+    canLoad: [IntroGuard, AutoLoginGuard]
   },
+ 
   {
     path: 'signup',
     loadChildren: () => import('./pages/signup/signup.module').then( m => m.SignupPageModule)
@@ -30,7 +34,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardPage,
-    canActivate: [AuthGuard]
+    canLoad: [AuthGuard]
   },
   {
     path: 'admin-home',
@@ -44,6 +48,10 @@ const routes: Routes = [
   {
     path: 'forbidden',
     loadChildren: () => import('./pages/forbidden/forbidden.module').then( m => m.ForbiddenPageModule)
+  },
+  {
+    path: 'intro',
+    loadChildren: () => import('./pages/intro/intro.module').then( m => m.IntroPageModule)
   }
 ];
 

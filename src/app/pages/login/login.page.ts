@@ -23,7 +23,7 @@ export class LoginPage implements OnInit {
 constructor(
   private formBuilder: FormBuilder, 
   private authService: AuthService,
-  private navCtrl: NavController 
+  private navCtrl: NavController
   ) {}
 
 ngOnInit() {
@@ -34,23 +34,25 @@ ngOnInit() {
 }
 
 onSubmit() {
-  const { email, password } = this.loginForm.value;
-  this.authService.login(email, password).subscribe(response => {
-    console.log('Login efetuado com sucesso!', response);
-    this.authService.setToken(response.token);
-    this.navCtrl.navigateForward('/dashboard');
-  }, error => {
-    console.error('Erro ao efetuar login!', error);
-    // Exibir mensagem de erro
-  });
+  // const { email, password } = this.loginForm.value;
+  // this.authService.login(email, password).subscribe(response => {
+  //   console.log('Login efetuado com sucesso!', response);
+  //   this.authService.setToken(response.token);
+  //   this.navCtrl.navigateForward('/dashboard');
+  // }, error => {
+  //   console.error('Erro ao efetuar login!', error);
+  //   // Exibir mensagem de erro
+  // });
 }
 
 
 login(){
-  this.authService.login(this.email, this.password).subscribe((response: any) => {
-    this.authService.setToken(response.token);
+  this.authService.login('seu-token-jwt-aqui');
+    this.navCtrl.navigateForward('/home');
    // this.navCtrl.navigateForward('/dashboard');
-  });
+  };
 }
 
-}
+
+
+

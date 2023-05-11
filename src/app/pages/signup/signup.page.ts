@@ -44,7 +44,7 @@ export class SignupPage implements OnInit {
     const usuario = this.cadastroForm.value;
     this.usersService.cadastrarUsuario(usuario).subscribe(response => {
       console.log('Usuário cadastrado com sucesso!', response);
-      this.navCtrl.navigateForward('/dashboard')
+      this.navCtrl.navigateForward('/login')
     }, error => {
       console.error('Erro ao cadastrar usuário!', error);
     });
