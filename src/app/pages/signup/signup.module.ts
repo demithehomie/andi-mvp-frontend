@@ -8,7 +8,7 @@ import { SignupPageRoutingModule } from './signup-routing.module';
 
 import { SignupPage } from './signup.page';
 import { HttpClientModule } from '@angular/common/http';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 import { UsersService } from 'src/app/services/user.service';
 
 @NgModule({
@@ -21,6 +21,6 @@ import { UsersService } from 'src/app/services/user.service';
     ReactiveFormsModule
   ],
   declarations: [SignupPage],
-  providers: [AuthService, UsersService]
+  providers: [AuthenticationService, UsersService]
 })
 export class SignupPageModule {}

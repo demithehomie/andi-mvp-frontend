@@ -9,7 +9,7 @@ import { DashboardPageRoutingModule } from './dashboard-routing.module';
 import { DashboardPage } from './dashboard.page';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersService } from 'src/app/services/user.service';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @NgModule({
   imports: [
@@ -21,6 +21,6 @@ import { AuthService } from 'src/app/services/auth.service';
     DashboardPageRoutingModule
   ],
   declarations: [DashboardPage],
-  providers: [UsersService, AuthService]
+  providers: [UsersService, AuthenticationService]
 })
 export class DashboardPageModule {}

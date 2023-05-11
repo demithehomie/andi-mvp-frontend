@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from './guards/auth-guard.service';
+import { AuthGuard } from './guards/auth.guard';
 import { DashboardPage } from './pages/dashboard/dashboard.page';
 import { AdminHomePage } from './pages/admin-home/admin-home.page';
 import { AutoLoginGuard } from './guards/auto-login.guard';
@@ -29,13 +29,10 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule),
+    canLoad: [AuthGuard]
    
   },
-  {
-    path: 'dashboard',
-    component: DashboardPage,
-    canLoad: [AuthGuard]
-  },
+ 
   {
     path: 'admin-home',
     loadChildren: () => import('./pages/admin-home/admin-home.module').then( m => m.AdminHomePageModule)
