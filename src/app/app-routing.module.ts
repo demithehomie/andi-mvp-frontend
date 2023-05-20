@@ -6,7 +6,7 @@ import { AdminHomePage } from './pages/admin-home/admin-home.page';
 import { AutoLoginGuard } from './guards/auto-login.guard';
 import { IntroGuard } from './guards/intro.guard';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
@@ -19,7 +19,7 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
-    canLoad: [IntroGuard, AutoLoginGuard]
+    canLoad: [IntroGuard, /* AutoLoginGuard*/]
   },
  
   {
@@ -29,7 +29,7 @@ const routes: Routes = [
   {
     path: 'dashboard',
     loadChildren: () => import('./pages/dashboard/dashboard.module').then( m => m.DashboardPageModule),
-    canLoad: [AuthGuard]
+   // canLoad: [AuthGuard]
    
   },
  //

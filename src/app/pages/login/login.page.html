@@ -19,8 +19,8 @@
     <ion-input label="Senha" labelPlacement="floating" placeholder="Insira sua senha" type="password" formControlName="password"></ion-input>
   </ion-item>
   <div *ngIf="(password?.dirty || password?.touched) && password?.errors" class="errors">
-    <span *ngIf="password?.errors?.['required']">Password is required</span>
-    <span *ngIf="password?.errors?.['minlength']">Password needs to be 6 characters</span>
+    <span *ngIf="password?.errors?.['required']">Você precisa inserir sua senha</span>
+    <span *ngIf="password?.errors?.['minlength']">A senha consiste no mínimo em 6 caracteres</span>
   </div>
 <br>
   <ion-button  type="submit" expand="block" [disabled]="!credentials.valid">Enviar</ion-button>
